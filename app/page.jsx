@@ -42,17 +42,17 @@ export default function Home() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/hero-night.jpg')" }} />
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/project-1.jpg')" }} />
           <div className="absolute inset-0 bg-neutral-900/55" />
           <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8 lg:py-40">
             <div className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">
-              Agoura Hills &amp; Surrounding Areas
+              Greater Los Angeles Area
             </div>
             <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
               Design It. Build It. Love It.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
-              Peachy Builders designs and builds patios, pavers, retaining walls, and full exterior transformations for homeowners across the greater Los Angeles area.
+              Peachy Builders designs and builds your outdoor dreams, we specialize in full exterior transformations for homeowners across the greater Los Angeles area.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="#projects" className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:-translate-y-px">View Our Work</a>
