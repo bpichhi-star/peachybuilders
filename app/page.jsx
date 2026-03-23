@@ -5,20 +5,53 @@ export default function PeachyBuildersSite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const services = [
-    { title: "Hardscape", desc: "Custom patios, pavers, walkways, and retaining walls built for beauty and long-term durability." },
-    { title: "Landscape Design", desc: "Thoughtful planting, lighting, and softscape design that adds balance and curb appeal to every property." },
-    { title: "Exterior Design", desc: "Full outdoor transformations that unify architecture, materials, and lifestyle into one cohesive result." },
+    {
+      title: "Hardscape",
+      desc: "Custom patios, pavers, walkways, and retaining walls built for beauty and long-term durability.",
+    },
+    {
+      title: "Landscape Design",
+      desc: "Thoughtful planting, lighting, and softscape design that adds balance and curb appeal to every property.",
+    },
+    {
+      title: "Exterior Design",
+      desc: "Full outdoor transformations that unify architecture, materials, and lifestyle into one cohesive result.",
+    },
   ];
 
   const specialties = [
-    "Backyard Transformations","Patios & Walkways","Pavers & Driveways","Retaining Walls",
-    "Outdoor Living Spaces","Concrete & Flatwork","Turf & Low-Maintenance Yards","Landscape Lighting",
+    "Backyard Transformations",
+    "Patios & Walkways",
+    "Pavers & Driveways",
+    "Retaining Walls",
+    "Outdoor Living Spaces",
+    "Concrete & Flatwork",
+    "Turf & Low-Maintenance Yards",
+    "Landscape Lighting",
   ];
 
   const projects = [
-    { title: "Modern Backyard Upgrade", place: "Agoura Hills, CA", type: "Hardscape • Landscape • Lighting", summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.", img: "/images/hero-night.jpg" },
-    { title: "Curb Appeal Refresh", place: "Calabasas, CA", type: "Driveway • Entry • Exterior Design", summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.", img: "/images/hero-day.jpg" },
-    { title: "Outdoor Living Expansion", place: "Westlake Village, CA", type: "Patio • Seating Area • Hardscape", summary: "An underused backyard transformed into a refined, functional extension of the home.", gradient: "bg-[linear-gradient(135deg,#f5f5f4,#d6d3d1,#78716c)]" },
+    {
+      title: "Modern Backyard Upgrade",
+      place: "Agoura Hills, CA",
+      type: "Hardscape • Landscape • Lighting",
+      summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.",
+      gradient: "bg-[linear-gradient(135deg,#d6d3d1,#a8a29e,#57534e)]",
+    },
+    {
+      title: "Curb Appeal Refresh",
+      place: "Calabasas, CA",
+      type: "Driveway • Entry • Exterior Design",
+      summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.",
+      gradient: "bg-[linear-gradient(135deg,#e7e5e4,#cbd5c0,#78716c)]",
+    },
+    {
+      title: "Outdoor Living Expansion",
+      place: "Westlake Village, CA",
+      type: "Patio • Seating Area • Hardscape",
+      summary: "An underused backyard transformed into a refined, functional extension of the home.",
+      gradient: "bg-[linear-gradient(135deg,#f5f5f4,#d6d3d1,#78716c)]",
+    },
   ];
 
   const process = [
@@ -29,8 +62,9 @@ export default function PeachyBuildersSite() {
   ];
 
   const serviceAreas = [
-    "Agoura Hills","Calabasas","Westlake Village","Woodland Hills",
-    "Encino","Tarzana","Thousand Oaks","Surrounding LA Areas",
+    "Agoura Hills", "Calabasas", "Westlake Village",
+    "Woodland Hills", "Encino", "Tarzana",
+    "Thousand Oaks", "Surrounding LA Areas",
   ];
 
   return (
@@ -50,8 +84,11 @@ export default function PeachyBuildersSite() {
             <a href="#areas" className="transition hover:text-neutral-950">Areas</a>
             <a href="#contact" className="rounded-full border border-neutral-900 px-4 py-2 font-medium transition hover:bg-neutral-900 hover:text-stone-50">Get Estimate</a>
           </nav>
-          <button type="button" onClick={() => setMobileMenuOpen((o) => !o)}
-            className="inline-flex items-center rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium md:hidden">
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((o) => !o)}
+            className="inline-flex items-center rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium md:hidden"
+          >
             Menu
           </button>
         </div>
@@ -70,33 +107,34 @@ export default function PeachyBuildersSite() {
 
       <main>
 
-        {/* HERO — full bleed photo */}
-        <section className="relative min-h-[90vh] flex items-end overflow-hidden">
-          <div className="absolute inset-0">
-            <img src="/images/hero-night.jpg" alt="Peachy Builders outdoor project" className="w-full h-full object-cover object-center" />
-            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/30 to-transparent" />
-          </div>
-          <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 lg:px-8 lg:pb-28">
-            <div className="mb-4 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white backdrop-blur-sm">
+        {/* HERO */}
+        <section className="relative overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/images/hero-night.jpg')" }}
+          />
+          <div className="absolute inset-0 bg-neutral-900/55" />
+          <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8 lg:py-40">
+            <div className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">
               Agoura Hills & Surrounding Areas
             </div>
-            <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
               Design It. Build It. Love It.
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-stone-200">
+            <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
               Peachy Builders designs and builds patios, pavers, retaining walls, and full exterior transformations for homeowners across the greater Los Angeles area.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#projects" className="rounded-full bg-white px-7 py-3 text-sm font-medium text-neutral-900 shadow-sm transition hover:-translate-y-px">
+              <a href="#projects" className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:-translate-y-px">
                 View Our Work
               </a>
               <a href="#contact" className="rounded-full border border-white/50 bg-white/10 px-7 py-3 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20">
                 Request Free Estimate
               </a>
             </div>
-            <div className="mt-10 flex flex-wrap gap-3">
-              {["Licensed & Insured","25+ Years Experience","Free Estimates","Design-Driven"].map((item) => (
-                <div key={item} className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-sm">
+            <div className="mt-12 flex flex-wrap gap-3">
+              {["Licensed & Insured", "25+ Years Experience", "Free Estimates", "Design-Driven"].map((item) => (
+                <div key={item} className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/80 backdrop-blur-sm">
                   {item}
                 </div>
               ))}
@@ -144,11 +182,7 @@ export default function PeachyBuildersSite() {
             <div className="grid gap-6 lg:grid-cols-3">
               {projects.map((p) => (
                 <div key={p.title} className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-sm">
-                  {p.img ? (
-                    <img src={p.img} alt={p.title} className="h-56 w-full object-cover" />
-                  ) : (
-                    <div className={`h-56 ${p.gradient}`} />
-                  )}
+                  <div className={`h-56 ${p.gradient}`} />
                   <div className="p-7">
                     <div className="text-xs uppercase tracking-[0.22em] text-stone-400">{p.place}</div>
                     <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
@@ -184,11 +218,25 @@ export default function PeachyBuildersSite() {
         <section className="bg-stone-100 py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-stone-200 bg-white p-8">
-              <div><div className="text-sm uppercase tracking-[0.24em] text-stone-400">License</div><div className="mt-1 text-xl font-semibold">License #1058911</div></div>
-              <div><div className="text-sm uppercase tracking-[0.24em] text-stone-400">Coverage</div><div className="mt-1 text-xl font-semibold">Fully Insured</div></div>
-              <div><div className="text-sm uppercase tracking-[0.24em] text-stone-400">Experience</div><div className="mt-1 text-xl font-semibold">25+ Years</div></div>
-              <div><div className="text-sm uppercase tracking-[0.24em] text-stone-400">Estimates</div><div className="mt-1 text-xl font-semibold">Always Free</div></div>
-              <a href="#contact" className="rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-stone-50 transition hover:opacity-90">Get Estimate</a>
+              <div>
+                <div className="text-sm uppercase tracking-[0.24em] text-stone-400">License</div>
+                <div className="mt-1 text-xl font-semibold">License #1058911</div>
+              </div>
+              <div>
+                <div className="text-sm uppercase tracking-[0.24em] text-stone-400">Coverage</div>
+                <div className="mt-1 text-xl font-semibold">Fully Insured</div>
+              </div>
+              <div>
+                <div className="text-sm uppercase tracking-[0.24em] text-stone-400">Experience</div>
+                <div className="mt-1 text-xl font-semibold">25+ Years</div>
+              </div>
+              <div>
+                <div className="text-sm uppercase tracking-[0.24em] text-stone-400">Estimates</div>
+                <div className="mt-1 text-xl font-semibold">Always Free</div>
+              </div>
+              <a href="#contact" className="rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-stone-50 transition hover:opacity-90">
+                Get Estimate
+              </a>
             </div>
           </div>
         </section>
@@ -200,11 +248,15 @@ export default function PeachyBuildersSite() {
               <div>
                 <div className="text-sm uppercase tracking-[0.28em] text-stone-400">Service Areas</div>
                 <h2 className="mt-3 text-4xl font-semibold tracking-tight">We Serve the Greater LA Area</h2>
-                <p className="mt-4 text-lg leading-8 text-neutral-600">Based in Agoura Hills, Peachy Builders works throughout the western San Fernando Valley and surrounding communities.</p>
+                <p className="mt-4 text-lg leading-8 text-neutral-600">
+                  Based in Agoura Hills, Peachy Builders works throughout the western San Fernando Valley and surrounding communities.
+                </p>
               </div>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {serviceAreas.map((area) => (
-                  <div key={area} className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-medium text-neutral-700">{area}</div>
+                  <div key={area} className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-medium text-neutral-700">
+                    {area}
+                  </div>
                 ))}
               </div>
             </div>
@@ -218,7 +270,9 @@ export default function PeachyBuildersSite() {
               <div>
                 <div className="text-sm uppercase tracking-[0.28em] text-stone-400">Contact</div>
                 <h2 className="mt-3 text-4xl font-semibold">Ready to Get Started?</h2>
-                <p className="mt-4 text-lg leading-8 text-stone-300">Whether it's a patio, driveway, retaining wall, or full backyard — reach out and we'll walk you through next steps.</p>
+                <p className="mt-4 text-lg leading-8 text-stone-300">
+                  Whether it's a patio, driveway, retaining wall, or full backyard — reach out and we'll walk you through next steps.
+                </p>
                 <div className="mt-8 space-y-3 text-stone-300">
                   <div>📞 323-477-4733</div>
                   <div>✉️ Peachybuilders@gmail.com</div>
@@ -234,7 +288,9 @@ export default function PeachyBuildersSite() {
                   <input className="w-full rounded-2xl border border-stone-200 px-4 py-3 text-sm outline-none transition focus:border-neutral-800" placeholder="Email address" name="email" type="email" />
                   <input className="w-full rounded-2xl border border-stone-200 px-4 py-3 text-sm outline-none transition focus:border-neutral-800" placeholder="Phone number" name="phone" type="tel" />
                   <textarea className="h-28 w-full rounded-2xl border border-stone-200 px-4 py-3 text-sm outline-none transition focus:border-neutral-800" placeholder="Tell us about your project" name="message" />
-                  <button type="submit" className="w-full rounded-full bg-neutral-900 py-3 text-sm font-medium text-stone-50 transition hover:opacity-90">Submit Request</button>
+                  <button type="submit" className="w-full rounded-full bg-neutral-900 py-3 text-sm font-medium text-stone-50 transition hover:opacity-90">
+                    Submit Request
+                  </button>
                 </form>
               </div>
             </div>
