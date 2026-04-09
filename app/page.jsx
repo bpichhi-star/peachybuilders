@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 
 export default function Home() {
@@ -7,7 +6,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-stone-50 text-neutral-900">
-
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
@@ -22,7 +20,11 @@ export default function Home() {
             <a href="#areas" className="transition hover:text-neutral-950">Areas</a>
             <a href="#contact" className="rounded-full border border-neutral-900 px-4 py-2 font-medium transition hover:bg-neutral-900 hover:text-stone-50">Get Estimate</a>
           </nav>
-          <button type="button" onClick={() => setMenuOpen((v) => !v)} className="inline-flex items-center rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium md:hidden">
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            className="inline-flex items-center rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium md:hidden"
+          >
             Menu
           </button>
         </div>
@@ -42,8 +44,11 @@ export default function Home() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/project-1.jpg')" }} />
-          <div className="absolute inset-0 bg-neutral-900/55" />
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/images/hero.jpg')" }}
+          />
+          <div className="absolute inset-0 bg-neutral-900/50" />
           <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8 lg:py-40">
             <div className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">
               Greater Los Angeles Area
@@ -105,7 +110,7 @@ export default function Home() {
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
               {[
-                { title: "Modern Backyard Upgrade", place: "Agoura Hills, CA", type: "Hardscape • Landscape • Lighting", summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.", image: "/images/project-1.jpg" },
+                { title: "Modern Backyard Upgrade", place: "Agoura Hills, CA", type: "Hardscape • Landscape • Lighting", summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.", image: "/images/hero.jpg" },
                 { title: "Curb Appeal Refresh", place: "Calabasas, CA", type: "Driveway • Entry • Exterior Design", summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.", image: "/images/project-2.jpg" },
                 { title: "Outdoor Living Expansion", place: "Westlake Village, CA", type: "Patio • Seating Area • Hardscape", summary: "An underused backyard transformed into a refined, functional extension of the home.", image: "/images/project-3.jpg" },
               ].map((proj) => (
@@ -236,7 +241,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
     </div>
   );
 }
