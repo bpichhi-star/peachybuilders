@@ -112,7 +112,7 @@ export default function Home() {
               {[
                 { title: "Modern Backyard Upgrade", place: "Agoura Hills, CA", type: "Hardscape • Landscape • Lighting", summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.", image: "/images/hero.jpg" },
                 { title: "Curb Appeal Refresh", place: "Calabasas, CA", type: "Driveway • Entry • Exterior Design", summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.", image: "/images/project-2.jpg" },
-                { title: "Outdoor Living Expansion", place: "Westlake Village, CA", type: "Patio • Seating Area • Hardscape", summary: "An underused backyard transformed into a refined, functional extension of the home.", image: "/images/project-3.jpg" },
+                { title: "Outdoor Living Expansion", place: "Westlake Village, CA", type: "Patio • Seating Area • Hardscape", summary: "An underused backyard transformed into a refined, functional extension of the home.", image: "/images/project-westlake.jpg" },
               ].map((proj) => (
                 <div key={proj.title} className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-sm">
                   <div className="h-56 bg-cover bg-center" style={{ backgroundImage: `url('${proj.image}')` }} />
