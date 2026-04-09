@@ -1,5 +1,33 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
+
+const PROJECTS = [
+  {
+    slug: "modern-jewel",
+    title: "Modern Jewel Upgrade",
+    place: "Agoura Hills, CA",
+    type: "Hardscape • Landscape • Lighting • Cabanas • Pool",
+    summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.",
+    image: "/images/hero.jpg",
+  },
+  {
+    slug: "kitchens-baths",
+    title: "Kitchens | Baths",
+    place: "Westlake Village, CA",
+    type: "Various Pool Projects",
+    summary: "An underused backyard transformed into a refined, functional extension of the home.",
+    image: "/images/project-westlake.jpg",
+  },
+  {
+    slug: "pools",
+    title: "Pools | Pools | Pools",
+    place: "Calabasas, CA",
+    type: "Driveway • Entry • Exterior Design",
+    summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.",
+    image: "/images/project-2.jpg",
+  },
+];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -109,20 +137,31 @@ export default function Home() {
               <a href="#contact" className="hidden text-sm font-medium underline underline-offset-4 md:block">Start Your Project →</a>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
-              {[
-                { title: "Modern Jewel Upgrade",type: "Hardscape • Landscape • Lighting • Cabanas • Pool", summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.", image: "/images/hero.jpg" },
-                { title: "Pools | Pools | Pools", type: "Various Pool Projects", summary: "Various pool projects throughout the phases.", image: "/images/project-westlake.jpg" },
-                { title: "Kitchens | Baths", type: "Kitchen Bathroom Remodeling", summary: "Various kitchen and pool project thoughout the stages.", image: "/images/project-2.jpg" },
-                ].map((proj) => (
-                <div key={proj.title} className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-sm">
-                  <div className="h-56 bg-cover bg-center" style={{ backgroundImage: `url('${proj.image}')` }} />
+              {PROJECTS.map((proj) => (
+                <Link
+                  key={proj.slug}
+                  href={`/projects/${proj.slug}`}
+                  className="group overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div
+                    className="relative h-64 overflow-hidden bg-cover bg-center"
+                    style={{ backgroundImage: `url('${proj.image}')` }}
+                  >
+                    <div className="absolute inset-0 bg-neutral-900/0 transition-all duration-300 group-hover:bg-neutral-900/25" />
+                    <div className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-full bg-white/95 px-3.5 py-2 text-xs font-semibold text-neutral-900 opacity-0 shadow-md backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+                      View Photos
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5">
+                        <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
                   <div className="p-7">
                     <div className="text-xs uppercase tracking-[0.22em] text-stone-400">{proj.place}</div>
-                    <h3 className="mt-2 text-xl font-semibold">{proj.title}</h3>
+                    <h3 className="mt-2 text-xl font-semibold transition duration-200 group-hover:text-neutral-500">{proj.title}</h3>
                     <div className="mt-1 text-sm text-stone-500">{proj.type}</div>
                     <p className="mt-3 text-sm leading-7 text-neutral-600">{proj.summary}</p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
