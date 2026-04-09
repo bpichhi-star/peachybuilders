@@ -110,9 +110,9 @@ export default function Home() {
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
               {[
-                { title: "Modern Jewel Upgrade", place: "Westlake Village, CA", type: "Hardscape • Landscape • Lighting • Cabanas • Pool", summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.", image: "/images/hero.jpg" },
-                { title: "Kitchens | Baths", place: "Westlake Village, CA", type: "Pool • Seating Area • Hardscape", summary: "An underused backyard transformed into a refined, functional extension of the home.", image: "/images/project-westlake.jpg" },
-                { title: "Pools | Pools | Pools", place: "Calabasas, CA", type: "Driveway • Entry • Exterior Design", summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.", image: "/images/project-2.jpg" },
+                { title: "Modern Jewel Upgrade",type: "Hardscape • Landscape • Lighting • Cabanas • Pool", summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.", image: "/images/hero.jpg" },
+                { title: "Pools | Pools | Pools", type: "Various Pool Projects", summary: "Various pool projects throughout the phases.", image: "/images/project-westlake.jpg" },
+                { title: "Kitchens | Baths", type: "Kitchen Bathroom Remodeling", summary: "Various kitchen and pool project thoughout the stages.", image: "/images/project-2.jpg" },
                 ].map((proj) => (
                 <div key={proj.title} className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-sm">
                   <div className="h-56 bg-cover bg-center" style={{ backgroundImage: `url('${proj.image}')` }} />
