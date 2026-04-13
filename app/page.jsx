@@ -4,9 +4,8 @@ import Link from "next/link";
 
 const PROJECTS = [
   {
-    slug: "modern-jewel",
-    title: "Modern Jewel Upgrade",
-    place: "Agoura Hills, CA",
+    slug: "full-renovations",
+    title: "Full Renovations",
     type: "Hardscape • Landscape • Lighting • Cabanas • Pool",
     summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.",
     image: "/images/hero.jpg",
@@ -14,7 +13,6 @@ const PROJECTS = [
   {
     slug: "kitchens-baths",
     title: "Kitchens | Baths",
-    place: "Westlake Village, CA",
     type: "Various Pool Projects",
     summary: "An underused backyard transformed into a refined, functional extension of the home.",
     image: "/images/project-westlake.jpg",
@@ -22,7 +20,6 @@ const PROJECTS = [
   {
     slug: "pools",
     title: "Pools | Pools | Pools",
-    place: "Calabasas, CA",
     type: "Driveway • Entry • Exterior Design",
     summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.",
     image: "/images/project-2.jpg",
@@ -156,8 +153,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="p-7">
-                    <div className="text-xs uppercase tracking-[0.22em] text-stone-400">{proj.place}</div>
-                    <h3 className="mt-2 text-xl font-semibold transition duration-200 group-hover:text-neutral-500">{proj.title}</h3>
+                    <h3 className="text-xl font-semibold transition duration-200 group-hover:text-neutral-500">{proj.title}</h3>
                     <div className="mt-1 text-sm text-stone-500">{proj.type}</div>
                     <p className="mt-3 text-sm leading-7 text-neutral-600">{proj.summary}</p>
                   </div>
