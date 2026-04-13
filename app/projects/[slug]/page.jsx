@@ -47,10 +47,18 @@ const PROJECTS = {
     type: "Driveway • Entry • Exterior Design",
     summary:
       "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression. Custom pool shapes, water features, and exterior hardscape working together as one cohesive build.",
-    cover: "/images/project-2.jpg",
+    cover: "/images/projects/pools/pool-1.jpg",
     photos: [
-      "/images/project-2.jpg",
-      // Add more: "/images/projects/pools/2.jpg", etc.
+      "/images/projects/pools/pool-1.jpg",
+      "/images/projects/pools/pool-2.jpg",
+      "/images/projects/pools/pool-3.jpg",
+      "/images/projects/pools/pool-4.jpg",
+      "/images/projects/pools/pool-5.jpg",
+      "/images/projects/pools/pool-6.jpg",
+      "/images/projects/pools/pool-7.jpg",
+      "/images/projects/pools/pool-8.jpg",
+      "/images/projects/pools/pool-9.jpg",
+      "/images/projects/pools/pool-10.jpg",
     ],
   },
 };
