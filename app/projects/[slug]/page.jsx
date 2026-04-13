@@ -28,7 +28,20 @@ const PROJECTS = {
     cover: "/images/project-westlake.jpg",
     photos: [
       "/images/project-westlake.jpg",
-      // Add more: "/images/projects/kitchens-baths/2.jpg", etc.
+      "/images/projects/kitchens-baths/kb-1.jpg",
+      "/images/projects/kitchens-baths/kb-2.jpg",
+      "/images/projects/kitchens-baths/kb-3.jpg",
+      "/images/projects/kitchens-baths/kb-4.jpg",
+      "/images/projects/kitchens-baths/kb-5.jpg",
+      "/images/projects/kitchens-baths/kb-6.jpg",
+      "/images/projects/kitchens-baths/kb-7.jpg",
+      "/images/projects/kitchens-baths/kb-8.jpg",
+      "/images/projects/kitchens-baths/kb-9.jpg",
+      "/images/projects/kitchens-baths/kb-10.jpg",
+      "/images/projects/kitchens-baths/kb-11.jpg",
+      "/images/projects/kitchens-baths/kb-12.jpg",
+      "/images/projects/kitchens-baths/kb-13.jpg",
+      "/images/projects/kitchens-baths/kb-14.jpg",
     ],
   },
   pools: {
@@ -259,4 +272,3 @@ export default function ProjectPage() {
     </div>
   );
 }
-
