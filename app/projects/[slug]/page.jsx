@@ -7,21 +7,19 @@ import { useParams } from "next/navigation";
 // To add photos: drop images into /public/images/projects/[slug]/
 // and add the filenames to the `photos` array below.
 const PROJECTS = {
-  "modern-jewel": {
-    title: "Modern Jewel Upgrade",
-    place: "Agoura Hills, CA",
+  "full-renovations": {
+    title: "Full Renovations",
     type: "Hardscape • Landscape • Lighting • Cabanas • Pool",
     summary:
       "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining. Every detail was considered — from the custom stone coping to the cabana structure and precision-placed landscape lighting.",
     cover: "/images/hero.jpg",
     photos: [
       "/images/hero.jpg",
-      // Add more: "/images/projects/modern-jewel/2.jpg", etc.
+      // Add more: "/images/projects/full-renovations/2.jpg", etc.
     ],
   },
   "kitchens-baths": {
     title: "Kitchens | Baths",
-    place: "Westlake Village, CA",
     type: "Various Pool Projects",
     summary:
       "An underused backyard transformed into a refined, functional extension of the home. A showcase of custom tile work, elevated spa integration, and natural stone detailing throughout.",
@@ -46,7 +44,6 @@ const PROJECTS = {
   },
   pools: {
     title: "Pools | Pools | Pools",
-    place: "Calabasas, CA",
     type: "Driveway • Entry • Exterior Design",
     summary:
       "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression. Custom pool shapes, water features, and exterior hardscape working together as one cohesive build.",
@@ -112,9 +109,6 @@ export default function ProjectPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/70 via-neutral-900/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-6 pb-10 lg:px-8">
             <div className="mx-auto max-w-7xl">
-              <div className="mb-3 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">
-                {project.place}
-              </div>
               <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">{project.title}</h1>
               <p className="mt-2 text-sm font-medium text-white/70">{project.type}</p>
             </div>
