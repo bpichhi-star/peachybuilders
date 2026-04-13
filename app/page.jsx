@@ -22,7 +22,7 @@ const PROJECTS = [
     title: "Pools | Pools | Pools",
     type: "Driveway • Entry • Exterior Design",
     summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.",
-    image: "/images/project-2.jpg",
+    image: "/images/projects/pools/pool-1.jpg",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function Home() {
         <section className="relative overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/images/hero.jpg')" }}
+            style={{ backgroundImage: "url('/images/projects/kitchens-baths/kb-10.jpg')" }}
           />
           <div className="absolute inset-0 bg-neutral-900/50" />
           <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8 lg:py-40">
