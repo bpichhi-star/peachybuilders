@@ -6,7 +6,7 @@ export default function Welcome() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center bg-neutral-950 overflow-hidden">
+    <div className="relative flex min-h-screen flex-col items-ceter justify-center bg-neutral-950 overflow-hidden">
 
       {/* Wordmark */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 text-center">
@@ -65,7 +65,7 @@ export default function Welcome() {
         >
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out scale-100 group-hover:scale-105"
-            style={{ backgroundImage: "url('/images/full_yard_day.png')" }}
+            style={{ backgroundImage: "url('/images/projects/full-renovations/full_yard_day.png')" }}
           />
           <div
             className="absolute inset-0 transition-all duration-500"
