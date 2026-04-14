@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 
 // ─── Project Data ──────────────────────────────────────────────────────────────
-// To add photos: drop images into /public/images/projects/[slug]/
-// and add the filenames to the `photos` array below.
 const PROJECTS = {
   "full-renovations": {
     title: "Full Renovations",
@@ -26,15 +24,6 @@ const PROJECTS = {
     cover: "/images/project-westlake.jpg",
     photos: [
       "/images/project-westlake.jpg",
-      "/images/projects/kitchens-baths/kb-1.jpg",
-      "/images/projects/kitchens-baths/kb-2.jpg",
-      "/images/projects/kitchens-baths/kb-3.jpg",
-      "/images/projects/kitchens-baths/kb-4.jpg",
-      "/images/projects/kitchens-baths/kb-5.jpg",
-      "/images/projects/kitchens-baths/kb-6.jpg",
-      "/images/projects/kitchens-baths/kb-7.jpg",
-      "/images/projects/kitchens-baths/kb-8.jpg",
-      "/images/projects/kitchens-baths/kb-9.jpg",
       "/images/projects/kitchens-baths/kb-10.jpg",
       "/images/projects/kitchens-baths/kb-11.jpg",
       "/images/projects/kitchens-baths/kb-12.jpg",
@@ -67,7 +56,6 @@ export default function ProjectPage() {
   const params = useParams();
   const slug = params?.slug;
   const project = PROJECTS[slug];
-
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   if (!project) {
@@ -86,8 +74,7 @@ export default function ProjectPage() {
 
   return (
     <div className="min-h-screen bg-stone-50 text-neutral-900">
-
-      {/* ── Header ── */}
+      {/* Header */}
       <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <Link href="/" className="group flex items-center gap-3">
@@ -108,12 +95,9 @@ export default function ProjectPage() {
       </header>
 
       <main>
-        {/* ── Hero Banner ── */}
+        {/* Hero Banner */}
         <section className="relative h-[55vh] min-h-[380px] overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('${project.cover}')` }}
-          />
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${project.cover}')` }} />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/70 via-neutral-900/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-6 pb-10 lg:px-8">
             <div className="mx-auto max-w-7xl">
@@ -123,7 +107,7 @@ export default function ProjectPage() {
           </div>
         </section>
 
-        {/* ── Summary ── */}
+        {/* Summary */}
         <section className="bg-white py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
@@ -133,14 +117,13 @@ export default function ProjectPage() {
           </div>
         </section>
 
-        {/* ── Photo Gallery ── */}
+        {/* Photo Gallery */}
         <section className="bg-stone-100 py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mb-10">
               <div className="text-sm uppercase tracking-[0.28em] text-stone-400">Gallery</div>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight">Project Photos</h2>
             </div>
-
             {project.photos.length === 0 ? (
               <div className="flex h-64 items-center justify-center rounded-[2rem] border-2 border-dashed border-stone-300 bg-white text-stone-400">
                 Photos coming soon
@@ -176,7 +159,7 @@ export default function ProjectPage() {
           </div>
         </section>
 
-        {/* ── CTA ── */}
+        {/* CTA */}
         <section className="bg-white py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="overflow-hidden rounded-[2.5rem] bg-neutral-900 p-10 text-stone-50 shadow-2xl lg:p-14">
@@ -199,7 +182,7 @@ export default function ProjectPage() {
         </section>
       </main>
 
-      {/* ── Footer ── */}
+      {/* Footer */}
       <footer className="border-t border-stone-200 bg-stone-50">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
@@ -215,13 +198,12 @@ export default function ProjectPage() {
         </div>
       </footer>
 
-      {/* ── Lightbox ── */}
+      {/* Lightbox */}
       {lightboxIndex !== null && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-neutral-950/95 p-4 backdrop-blur-sm"
           onClick={() => setLightboxIndex(null)}
         >
-          {/* Close */}
           <button
             className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
             onClick={() => setLightboxIndex(null)}
@@ -230,8 +212,6 @@ export default function ProjectPage() {
               <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
             </svg>
           </button>
-
-          {/* Prev */}
           {project.photos.length > 1 && (
             <button
               className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
@@ -242,16 +222,12 @@ export default function ProjectPage() {
               </svg>
             </button>
           )}
-
-          {/* Image */}
           <img
             src={project.photos[lightboxIndex]}
             alt={`${project.title} photo ${lightboxIndex + 1}`}
             className="max-h-[85vh] max-w-full rounded-2xl object-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
-
-          {/* Next */}
           {project.photos.length > 1 && (
             <button
               className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
@@ -262,8 +238,6 @@ export default function ProjectPage() {
               </svg>
             </button>
           )}
-
-          {/* Counter */}
           {project.photos.length > 1 && (
             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-xs text-white/70 backdrop-blur-sm">
               {lightboxIndex + 1} / {project.photos.length}
