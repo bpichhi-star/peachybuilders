@@ -21,14 +21,16 @@ const PROJECTS = {
     type: "Various Pool Projects",
     summary:
       "An underused backyard transformed into a refined, functional extension of the home. A showcase of custom tile work, elevated spa integration, and natural stone detailing throughout.",
-    cover: "/images/project-westlake.jpg",
+    cover: "/images/projects/kitchens-baths/kb-9.jpg",
     photos: [
-      "/images/project-westlake.jpg",
+      "/images/projects/kitchens-baths/kb-8.jpg",
+      "/images/projects/kitchens-baths/kb-9.jpg",
       "/images/projects/kitchens-baths/kb-10.jpg",
       "/images/projects/kitchens-baths/kb-11.jpg",
       "/images/projects/kitchens-baths/kb-12.jpg",
       "/images/projects/kitchens-baths/kb-13.jpg",
       "/images/projects/kitchens-baths/kb-14.jpg",
+      "/images/projects/kitchens-baths/kb-15.jpg",
     ],
   },
   pools: {
