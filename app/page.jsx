@@ -6,7 +6,7 @@ const PROJECTS = [
   {
     slug: "full-renovations",
     title: "Full Renovations",
-    type: "Hardscape • Landscape • Lighting • Cabanas • Pool",
+    type: "Hardscape • Landscape • Lighting • Cabanas • Pool • Kitchens • Bathrooms",
     summary:
       "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.",
     image: "/images/hero.jpg",
