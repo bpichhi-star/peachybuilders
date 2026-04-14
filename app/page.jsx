@@ -17,7 +17,7 @@ const PROJECTS = [
     type: "Various Pool Projects",
     summary:
       "An underused backyard transformed into a refined, functional extension of the home.",
-    image: "/images/project-westlake.jpg",
+    image: "/images/projects/kitchens-baths/kb-10.jpg",
   },
   {
     slug: "pools",
