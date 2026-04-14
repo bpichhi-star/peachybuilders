@@ -6,7 +6,7 @@ const PROJECTS = [
   {
     slug: "full-renovations",
     title: "Full Renovations",
-    type: "Hardscape • Landscape • Lighting • Cabanas • Pool • Kitchens • Bathrooms",
+    type: "Hardscape • Landscape • Lighting • Cabanas • Pool",
     summary:
       "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.",
     image: "/images/hero.jpg",
@@ -108,10 +108,9 @@ export default function Home() {
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
               {[
-                { title: "Hardscape & Landscape Design", desc: "Custom patios, pavers, walkways, and retaining walls built for beauty and long-term durability along with Thoughtful planting, lighting, and softscape design that adds balance and curb appeal to every property." },
-                { title: "Pools & Exterior Design", desc: "Full outdoor transformations that unify architecture, materials, and lifestyle into one cohesive result as well as new pools, fixing of existing pools." },
-                { title: "Kitchen & Bathrooms", desc: "We bring to life you dream kitchens and bathroom spa retreats to maximize space and function." },
-
+                { title: "Hardscape", desc: "Custom patios, pavers, walkways, and retaining walls built for beauty and long-term durability." },
+                { title: "Landscape Design", desc: "Thoughtful planting, lighting, and softscape design that adds balance and curb appeal to every property." },
+                { title: "Exterior Design", desc: "Full outdoor transformations that unify architecture, materials, and lifestyle into one cohesive result." },
               ].map((svc) => (
                 <div key={svc.title} className="rounded-[2rem] border border-stone-200 bg-stone-50 p-8">
                   <h3 className="text-2xl font-semibold">{svc.title}</h3>
