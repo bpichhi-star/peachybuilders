@@ -15,7 +15,7 @@ export default function Welcome() {
       </div>
 
       {/* Split Cards */}
-      <div className="flex w-full min-h-screen flex-col md:flex-row">
+      <div className="flex w-full min-h-scen flex-col md:flex-row">
 
         {/* Card 1 — Kitchen & Bath */}
         <Link
@@ -65,7 +65,7 @@ export default function Welcome() {
         >
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out scale-100 group-hover:scale-105"
-            style={{ backgroundImage: "url('/images/projects/pools/pool-2.jpg')" }}
+            style={{ backgroundImage: "url('/images/full_yard_day.png')" }}
           />
           <div
             className="absolute inset-0 transition-all duration-500"
