@@ -55,7 +55,7 @@ export default function OutdoorPage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/full_yard_day.png')" }} />
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/projects/full-renovations/full_yard_day.png')" }} />
           <div className="absolute inset-0 bg-neutral-900/50" />
           <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8 lg:py-40">
             <div className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">Greater Los Angeles Area</div>
