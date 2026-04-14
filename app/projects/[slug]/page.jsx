@@ -38,7 +38,6 @@ const PROJECTS = {
       "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression. Custom pool shapes, water features, and exterior hardscape working together as one cohesive build.",
     cover: "/images/projects/pools/pool-1.jpg",
     photos: [
-      "/images/projects/pools/pool-1.jpg",
       "/images/projects/pools/pool-2.jpg",
       "/images/projects/pools/pool-3.jpg",
       "/images/projects/pools/pool-4.jpg",
