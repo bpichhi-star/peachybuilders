@@ -7,21 +7,16 @@ const PROJECTS = [
     slug: "full-renovations",
     title: "Full Renovations",
     type: "Hardscape • Landscape • Lighting • Cabanas • Pool",
-    summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.",
+    summary:
+      "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.",
     image: "/images/hero.jpg",
-  },
-  {
-    slug: "kitchens-baths",
-    title: "Kitchens | Baths",
-    type: "Various Pool Projects",
-    summary: "An underused backyard transformed into a refined, functional extension of the home.",
-    image: "/images/project-westlake.jpg",
   },
   {
     slug: "pools",
     title: "Pools | Pools | Pools",
     type: "Driveway • Entry • Exterior Design",
-    summary: "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.",
+    summary:
+      "A front-of-home redesign focused on texture, symmetry, and a more elevated first impression.",
     image: "/images/projects/pools/pool-1.jpg",
   },
 ];
@@ -71,7 +66,7 @@ export default function Home() {
         <section className="relative overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/images/projects/kitchens-baths/kb-10.jpg')" }}
+            style={{ backgroundImage: "url('/images/hero.jpg')" }}
           />
           <div className="absolute inset-0 bg-neutral-900/50" />
           <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8 lg:py-40">
@@ -133,7 +128,7 @@ export default function Home() {
               </div>
               <a href="#contact" className="hidden text-sm font-medium underline underline-offset-4 md:block">Start Your Project →</a>
             </div>
-            <div className="grid gap-6 lg:grid-cols-3">
+            <div className="grid gap-6 lg:grid-cols-2">
               {PROJECTS.map((proj) => (
                 <Link
                   key={proj.slug}
