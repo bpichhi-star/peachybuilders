@@ -10,17 +10,13 @@ export default function Welcome() {
 
       {/* ── Wordmark overlay ─────────────────────────────────── */}
       <div className="absolute inset-x-0 top-0 z-20 flex flex-col items-center pt-10 pb-8 pointer-events-none select-none">
-        {/* Eyebrow */}
         <p className="text-[10px] uppercase tracking-[0.5em] text-neutral-400 mb-3">
           Welcome&nbsp;To
         </p>
-
-        {/* Brand name */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-[0.15em] text-white uppercase leading-none">
           Peachy&nbsp;Builders
         </h1>
-
-        </div>
+      </div>
 
       {/* ── Split Cards ───────────────────────────────────────── */}
       <div className="flex w-full min-h-screen flex-col md:flex-row">
@@ -30,7 +26,7 @@ export default function Welcome() {
           href="/kitchens-baths"
           onMouseEnter={() => setHovered("kb")}
           onMouseLeave={() => setHovered(null)}
-          className="group relative flex flex-1 flex-col items-center justify-center overflow-hidden cursor-pointer"
+          className="group relative flex flex-1 flex-col items-center justify-start overflow-hidden cursor-pointer"
           style={{ minHeight: "50vh" }}
         >
           <div
@@ -40,13 +36,17 @@ export default function Welcome() {
           <div
             className="absolute inset-0 transition-all duration-500"
             style={{
-              background: hovered === "kb"
-                ? "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.55))"
-                : "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.72))",
+              background:
+                hovered === "kb"
+                  ? "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.55))"
+                  : "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.72))",
             }}
           />
           <div className="absolute right-0 top-0 bottom-0 w-px bg-white/10 hidden md:block z-10" />
-          <div className="relative z-10 flex flex-col items-center gap-5 px-8 text-center">
+          <div
+            className="relative z-10 flex flex-col items-center gap-5 px-8 text-center"
+            style={{ marginTop: "38vh" }}
+          >
             <div className="text-xs uppercase tracking-[0.3em] text-white/50">Interior Remodels</div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
               Kitchen &amp; Bath
@@ -68,7 +68,7 @@ export default function Welcome() {
           href="/outdoor"
           onMouseEnter={() => setHovered("outdoor")}
           onMouseLeave={() => setHovered(null)}
-          className="group relative flex flex-1 flex-col items-center justify-center overflow-hidden cursor-pointer"
+          className="group relative flex flex-1 flex-col items-center justify-start overflow-hidden cursor-pointer"
           style={{ minHeight: "50vh" }}
         >
           <div
@@ -78,12 +78,16 @@ export default function Welcome() {
           <div
             className="absolute inset-0 transition-all duration-500"
             style={{
-              background: hovered === "outdoor"
-                ? "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.55))"
-                : "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.72))",
+              background:
+                hovered === "outdoor"
+                  ? "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.55))"
+                  : "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.72))",
             }}
           />
-          <div className="relative z-10 flex flex-col items-center gap-5 px-8 text-center">
+          <div
+            className="relative z-10 flex flex-col items-center gap-5 px-8 text-center"
+            style={{ marginTop: "38vh" }}
+          >
             <div className="text-xs uppercase tracking-[0.3em] text-white/50">Outdoor Living</div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
               Hardscape, Landscape<br />&amp; Pools
