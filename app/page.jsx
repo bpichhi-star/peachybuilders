@@ -10,11 +10,9 @@ export default function Welcome() {
 
       {/* ── Wordmark overlay ─────────────────────────────────── */}
       <div className="absolute inset-x-0 top-0 z-20 flex flex-col items-center pt-10 pb-8 pointer-events-none select-none">
-        {/* Eyebrow */}
         <p className="text-[20px] uppercase tracking-[0.5em] text-neutral-400 mb-3">
           Welcome&nbsp;To
         </p>
-        {/* Brand name */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-[0.15em] text-white uppercase leading-none">
           Peachy&nbsp;Builders
         </h1>
@@ -50,7 +48,7 @@ export default function Welcome() {
             style={{ marginTop: "38vh" }}
           >
             <div className="text-base uppercase tracking-[0.3em] text-white/50">Interior Remodels</div>
-            <h2 className="text-5xl font-semibold tracking-tight text-white leading-tight">
+            <h2 className="text-3xl font-semibold tracking-tight text-white leading-tight whitespace-nowrap">
               Kitchen &amp; Bath
             </h2>
             <p className="max-w-xs text-sm leading-7 text-white/65">
@@ -91,8 +89,8 @@ export default function Welcome() {
             style={{ marginTop: "38vh" }}
           >
             <div className="text-base uppercase tracking-[0.3em] text-white/50">Outdoor Living</div>
-            <h2 className="text-5xl font-semibold tracking-tight text-white leading-tight">
-              Hardscape, Landscape<br />&amp; Pools
+            <h2 className="text-3xl font-semibold tracking-tight text-white leading-tight whitespace-nowrap">
+              Hardscape, Landscape &amp; Pools
             </h2>
             <p className="max-w-xs text-sm leading-7 text-white/65">
               Custom pools, patios, pavers, and full outdoor transformations across the greater Los Angeles area.
