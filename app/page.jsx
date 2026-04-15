@@ -6,18 +6,18 @@ export default function Welcome() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="relative flex min-h-screen flex-col items-ceter justify-center bg-neutral-950 overflow-hidden">
+    <div className="relative flex min-h-screen flex-col items-center justify-center bg-white overflow-hidden">
 
       {/* Wordmark */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 text-center">
-        <div className="text-sm uppercase tracking-[0.35em] text-white/40 mb-1">Welcome To</div>
-        <div className="text-2xl font-semibold tracking-[0.2em] text-white">PEACHY BUILDERS</div>
+        <div className="text-sm uppercase tracking-[0.35em] text-neutral-400 mb-1">Welcome To</div>
+        <div className="text-2xl font-semibold tracking-[0.2em] text-neutral-900">PEACHY BUILDERS</div>
       </div>
 
       {/* Split Cards */}
-      <div className="flex w-full min-h-scen flex-col md:flex-row">
+      <div className="flex w-full min-h-screen flex-col md:flex-row">
 
-        {/* Card 1 — Kitchen & Bath */}
+        {/* Card 1 – Kitchen & Bath */}
         <Link
           href="/kitchens-baths"
           onMouseEnter={() => setHovered("kb")}
@@ -55,7 +55,7 @@ export default function Welcome() {
           </div>
         </Link>
 
-        {/* Card 2 — Hardscape, Landscape, Pools */}
+        {/* Card 2 – Hardscape, Landscape, Pools */}
         <Link
           href="/outdoor"
           onMouseEnter={() => setHovered("outdoor")}
@@ -95,7 +95,7 @@ export default function Welcome() {
       </div>
 
       {/* Footer line */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-xs tracking-[0.25em] uppercase text-white/25">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-xs tracking-[0.25em] uppercase text-neutral-400">
         Agoura Hills, CA &nbsp;·&nbsp; License #1058911
       </div>
 
