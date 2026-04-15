@@ -1,18 +1,20 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function KitchensBathsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-stone-50 text-neutral-900">
       <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <Link href="/">
+          <button onClick={() => router.back()} className="text-left">
             <div className="text-xl font-semibold tracking-[0.18em] text-neutral-900">PEACHY BUILDERS</div>
             <div className="text-xs uppercase tracking-[0.28em] text-stone-500">Kitchens & Bathrooms</div>
-          </Link>
+          </button>
           <nav className="hidden items-center gap-8 text-sm text-neutral-700 md:flex">
             <a href="#services" className="transition hover:text-neutral-950">Services</a>
             <a href="#gallery" className="transition hover:text-neutral-950">Gallery</a>
