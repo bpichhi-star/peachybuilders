@@ -93,7 +93,7 @@ export default function Welcome() {
               Hardscape, Landscape &amp; Pools
             </h2>
             <p className="max-w-xs text-sm leading-7 text-white/65">
-              Custom pools, patios, pavers, and full outdoor transformations across the greater Los Angeles area.
+              Custom pools, patios, pavers, full outdoor transformations across the greater Los Angeles area.
             </p>
             <div className="mt-2 flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 group-hover:bg-white group-hover:text-neutral-900 group-hover:border-white">
               Explore
