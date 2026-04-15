@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 // ─── Project Data ──────────────────────────────────────────────────────────────
 const PROJECTS = {
@@ -55,6 +55,7 @@ const PROJECTS = {
 
 export default function ProjectPage() {
   const params = useParams();
+  const router = useRouter();
   const slug = params?.slug;
   const project = PROJECTS[slug];
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -63,33 +64,57 @@ export default function ProjectPage() {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-stone-50 px-6 text-center">
         <p className="text-2xl font-semibold text-neutral-900">Project not found.</p>
-        <Link href="/" className="rounded-full border border-neutral-900 px-6 py-3 text-sm font-medium transition hover:bg-neutral-900 hover:text-white">
-          ← Back to Home
-        </Link>
+        <button
+          onClick={() => router.back()}
+          className="rounded-full border border-neutral-900 px-6 py-3 text-sm font-medium transition hover:bg-neutral-900 hover:text-white"
+        >
+          ← Back
+        </button>
       </div>
     );
   }
 
-  const prevPhoto = () => setLightboxIndex((i) => (i - 1 + project.photos.length) % project.photos.length);
-  const nextPhoto = () => setLightboxIndex((i) => (i + 1) % project.photos.length);
+  const prevPhoto = () =>
+    setLightboxIndex((i) => (i - 1 + project.photos.length) % project.photos.length);
+  const nextPhoto = () =>
+    setLightboxIndex((i) => (i + 1) % project.photos.length);
 
   return (
     <div className="min-h-screen bg-stone-50 text-neutral-900">
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <Link href="/" className="group flex items-center gap-3">
+          <button
+            onClick={() => router.back()}
+            className="group flex items-center gap-3"
+          >
             <div className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-300 bg-white transition group-hover:bg-neutral-900 group-hover:border-neutral-900">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-neutral-600 transition group-hover:text-white">
-                <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="h-4 w-4 text-neutral-600 transition group-hover:text-white"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <div>
-              <div className="text-base font-semibold tracking-[0.16em] text-neutral-900">PEACHY BUILDERS</div>
-              <div className="text-xs uppercase tracking-[0.24em] text-stone-400">Back to Projects</div>
+              <div className="text-base font-semibold tracking-[0.16em] text-neutral-900">
+                PEACHY BUILDERS
+              </div>
+              <div className="text-xs uppercase tracking-[0.24em] text-stone-400">
+                Back to Projects
+              </div>
             </div>
-          </Link>
-          <Link href="/#contact" className="rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium transition hover:bg-neutral-900 hover:text-stone-50">
+          </button>
+          <Link
+            href="/#contact"
+            className="rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium transition hover:bg-neutral-900 hover:text-stone-50"
+          >
             Get Estimate
           </Link>
         </div>
@@ -98,11 +123,16 @@ export default function ProjectPage() {
       <main>
         {/* Hero Banner */}
         <section className="relative h-[55vh] min-h-[380px] overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${project.cover}')` }} />
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url('${project.cover}')` }}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/70 via-neutral-900/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-6 pb-10 lg:px-8">
             <div className="mx-auto max-w-7xl">
-              <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">{project.title}</h1>
+              <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                {project.title}
+              </h1>
               <p className="mt-2 text-sm font-medium text-white/70">{project.type}</p>
             </div>
           </div>
@@ -112,7 +142,9 @@ export default function ProjectPage() {
         <section className="bg-white py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
-              <div className="text-sm uppercase tracking-[0.28em] text-stone-400">Project Overview</div>
+              <div className="text-sm uppercase tracking-[0.28em] text-stone-400">
+                Project Overview
+              </div>
               <p className="mt-4 text-lg leading-9 text-neutral-600">{project.summary}</p>
             </div>
           </div>
@@ -146,9 +178,18 @@ export default function ProjectPage() {
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-neutral-900/0 transition-all duration-300 group-hover:bg-neutral-900/20">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 opacity-0 shadow-lg transition-all duration-300 group-hover:opacity-100">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-neutral-800">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="h-5 w-5 text-neutral-800"
+                          >
                             <path d="M9 6a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zM9 10a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zM9 14a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" />
-                            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 1v10h10V5H5z" clipRule="evenodd" />
+                            <path
+                              fillRule="evenodd"
+                              d="M3 4a1 1 0 011-1h12a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 1v10h10V5H5z"
+                              clipRule="evenodd"
+                            />
                           </svg>
                         </div>
                       </div>
@@ -167,13 +208,21 @@ export default function ProjectPage() {
               <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                 <div>
                   <h2 className="text-3xl font-semibold">Love what you see?</h2>
-                  <p className="mt-3 text-lg text-stone-300">Let&apos;s talk about your project — estimates are always free.</p>
+                  <p className="mt-3 text-lg text-stone-300">
+                    Let&apos;s talk about your project — estimates are always free.
+                  </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <Link href="/#contact" className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:opacity-90">
+                  <Link
+                    href="/#contact"
+                    className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:opacity-90"
+                  >
                     Request Estimate
                   </Link>
-                  <Link href="/#projects" className="rounded-full border border-white/40 px-7 py-3 text-sm font-medium text-white transition hover:bg-white/10">
+                  <Link
+                    href="/#projects"
+                    className="rounded-full border border-white/40 px-7 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                  >
                     View All Projects
                   </Link>
                 </div>
@@ -209,7 +258,12 @@ export default function ProjectPage() {
             className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
             onClick={() => setLightboxIndex(null)}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5"
+            >
               <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
             </svg>
           </button>
@@ -218,8 +272,17 @@ export default function ProjectPage() {
               className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
               onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
-                <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"
+                  clipRule="evenodd"
+                />
               </svg>
             </button>
           )}
@@ -234,8 +297,17 @@ export default function ProjectPage() {
               className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
               onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
-                <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                  clipRule="evenodd"
+                />
               </svg>
             </button>
           )}
