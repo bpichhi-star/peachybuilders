@@ -8,13 +8,32 @@ export default function Welcome() {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-white overflow-hidden">
 
-      {/* Wordmark */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 text-center">
-        <div className="text-sm uppercase tracking-[0.35em] text-neutral-400 mb-1">Welcome To</div>
-        <div className="text-2xl font-semibold tracking-[0.2em] text-neutral-900">PEACHY BUILDERS</div>
+      {/* ── Wordmark overlay ─────────────────────────────────── */}
+      <div className="absolute inset-x-0 top-0 z-20 flex flex-col items-center pt-10 pb-8 pointer-events-none select-none">
+        {/* Eyebrow */}
+        <p className="text-[10px] uppercase tracking-[0.5em] text-neutral-400 mb-3">
+          Welcome&nbsp;To
+        </p>
+
+        {/* Brand name */}
+        <h1 className="text-5xl md:text-7xl font-bold tracking-[0.15em] text-neutral-900 uppercase leading-none">
+          Peachy&nbsp;Builders
+        </h1>
+
+        {/* Decorative rule */}
+        <div className="mt-4 flex items-center gap-3">
+          <span className="block h-px w-12 bg-neutral-300" />
+          <span className="block h-1.5 w-1.5 rounded-full bg-neutral-400" />
+          <span className="block h-px w-12 bg-neutral-300" />
+        </div>
+
+        {/* Tagline */}
+        <p className="mt-3 text-xs uppercase tracking-[0.35em] text-neutral-400">
+          Hardscape&nbsp;&bull;&nbsp;Landscape&nbsp;&bull;&nbsp;Pools&nbsp;&bull;&nbsp;Interior&nbsp;Remodels
+        </p>
       </div>
 
-      {/* Split Cards */}
+      {/* ── Split Cards ───────────────────────────────────────── */}
       <div className="flex w-full min-h-screen flex-col md:flex-row">
 
         {/* Card 1 – Kitchen & Bath */}
@@ -94,9 +113,9 @@ export default function Welcome() {
 
       </div>
 
-      {/* Footer line */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-xs tracking-[0.25em] uppercase text-neutral-400">
-        Agoura Hills, CA &nbsp;·&nbsp; License #1058911
+      {/* ── Footer line ───────────────────────────────────────── */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-xs tracking-[0.25em] uppercase text-neutral-400 whitespace-nowrap">
+        Agoura Hills, CA &nbsp;&middot;&nbsp; License #1058911
       </div>
 
     </div>
