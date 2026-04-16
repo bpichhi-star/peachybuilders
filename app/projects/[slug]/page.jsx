@@ -9,14 +9,14 @@ const PROJECTS = {
     type: "Kitchen Remodels",
     summary:
       "Full kitchen transformations from layout and cabinetry to countertops, backsplash, and fixtures — built to impress and function beautifully.",
-    cover: "/images/projects/kitchens/cover.jpg",
+    cover: "/images/projects/kitchens/kb-10.jpg",
   },
   bathrooms: {
     title: "Bathrooms",
     type: "Bathroom Remodels",
     summary:
       "Spa-inspired bathroom renovations featuring custom tile work, premium fixtures, vanities, and thoughtful layouts built around how you live.",
-    cover: "/images/projects/bathrooms/cover.jpg",
+    cover: "/images/projects/bathrooms/WH_Bath.png",
   },
   "full-renovations": {
     title: "Full Renovations",
@@ -30,7 +30,7 @@ const PROJECTS = {
     type: "Custom Pool Design & Construction",
     summary:
       "Resort-style and geometric custom pools designed and built from the ground up — shapes, water features, and finishes tailored to your property.",
-    cover: "/images/projects/pools/pool-1.jpg",
+    cover: "/images/projects/pools/kb-001.jpg",
   },
 };
 
@@ -225,7 +225,6 @@ export default function ProjectPage() {
               <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
             </svg>
           </button>
-
           {photos.length > 1 && (
             <button type="button" className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20" onClick={(e) => { e.stopPropagation(); prevPhoto(); }}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
@@ -233,14 +232,12 @@ export default function ProjectPage() {
               </svg>
             </button>
           )}
-
           <img
             src={photos[lightboxIndex]}
             alt={`${project.title} photo ${lightboxIndex + 1}`}
             className="max-h-[85vh] max-w-full rounded-2xl object-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
-
           {photos.length > 1 && (
             <button type="button" className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20" onClick={(e) => { e.stopPropagation(); nextPhoto(); }}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
@@ -248,7 +245,6 @@ export default function ProjectPage() {
               </svg>
             </button>
           )}
-
           {photos.length > 1 && (
             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-xs text-white/70 backdrop-blur-sm">
               {lightboxIndex + 1} / {photos.length}
