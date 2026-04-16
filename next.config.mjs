@@ -1,3 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  // v2
+};
 export default nextConfig;
