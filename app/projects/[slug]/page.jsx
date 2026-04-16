@@ -1,5 +1,3 @@
-
-export const dynamic = 'force-dynamic';
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -55,7 +53,7 @@ export default function ProjectPage() {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-stone-50 px-6 text-center">
         <p className="text-2xl font-semibold text-neutral-900">Project not found.</p>
-        <button type="button" onClick={() => router.back()} className="rounded-full border border-neutral-900 px-6 py-3 text-sm font-medium transition hover:bg-neutral-900 hover:text-white">← Back</button>
+        <button type="button" onClick={() => router.back()} className="rounded-full border border-neutral-900 px-6 py-3 text-sm font-medium transition hover:bg-neutral-900 hover:text-white">Back</button>
       </div>
     );
   }
@@ -79,7 +77,6 @@ export default function ProjectPage() {
           <Link href="/#contact" className="rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium transition hover:bg-neutral-900 hover:text-stone-50">Get Estimate</Link>
         </div>
       </header>
-
       <main>
         <section className="relative h-[55vh] min-h-[380px] overflow-hidden">
           <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${project.cover}')` }} />
@@ -91,7 +88,6 @@ export default function ProjectPage() {
             </div>
           </div>
         </section>
-
         <section className="bg-white py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
@@ -100,7 +96,6 @@ export default function ProjectPage() {
             </div>
           </div>
         </section>
-
         <section className="bg-stone-100 py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mb-10">
@@ -129,7 +124,6 @@ export default function ProjectPage() {
             )}
           </div>
         </section>
-
         <section className="bg-white py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="overflow-hidden rounded-[2.5rem] bg-neutral-900 p-10 text-stone-50 shadow-2xl lg:p-14">
@@ -147,7 +141,6 @@ export default function ProjectPage() {
           </div>
         </section>
       </main>
-
       <footer className="border-t border-stone-200 bg-stone-50">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
@@ -162,7 +155,6 @@ export default function ProjectPage() {
           </div>
         </div>
       </footer>
-
       {lightboxIndex !== null && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-neutral-950/95 p-4 backdrop-blur-sm" onClick={() => setLightboxIndex(null)}>
           <button type="button" className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20" onClick={() => setLightboxIndex(null)}>
@@ -173,7 +165,7 @@ export default function ProjectPage() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5"><path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" /></svg>
             </button>
           )}
-          <img src={photos[lightboxIndex]} alt={`${project.title} photo ${lightboxIndex + 1}`} className="max-h-[85vh] max-w-full rounded-2xl object-contain shadow-2xl" onClick={(e) => e.stopPropagation()} />
+          <img src={photos[lightboxIndex]} alt={`${project.title} ${lightboxIndex + 1}`} className="max-h-[85vh] max-w-full rounded-2xl object-contain shadow-2xl" onClick={(e) => e.stopPropagation()} />
           {photos.length > 1 && (
             <button type="button" className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20" onClick={(e) => { e.stopPropagation(); nextPhoto(); }}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5"><path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" /></svg>
