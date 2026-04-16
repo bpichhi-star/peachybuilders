@@ -55,16 +55,13 @@ export default function KitchensBathsPage() {
       </header>
 
       <main>
-        {/* Hero */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/projects/kitchens/kb-9.jpg')" }} />
           <div className="absolute inset-0 bg-neutral-900/50" />
           <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8 lg:py-40">
             <div className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">Greater Los Angeles Area</div>
             <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-white md:text-6xl">Kitchens &amp; Bathrooms</h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
-              Premium interior remodels designed for how you live. From full kitchen overhauls to spa-inspired bathrooms, every project is built with quality materials and precision craftsmanship.
-            </p>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">Premium interior remodels designed for how you live. From full kitchen overhauls to spa-inspired bathrooms, every project is built with quality materials and precision craftsmanship.</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="#gallery" className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-sm transition hover:-translate-y-px">View Our Work</a>
               <a href="#contact" className="rounded-full border border-white/50 bg-white/10 px-7 py-3 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20">Request Free Estimate</a>
@@ -77,7 +74,6 @@ export default function KitchensBathsPage() {
           </div>
         </section>
 
-        {/* Services */}
         <section id="services" className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mb-12">
@@ -104,7 +100,6 @@ export default function KitchensBathsPage() {
           </div>
         </section>
 
-        {/* Gallery */}
         <section id="gallery" className="bg-stone-100 py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mb-12 flex items-end justify-between">
@@ -121,9 +116,7 @@ export default function KitchensBathsPage() {
                     <div className="absolute inset-0 bg-neutral-900/0 transition-all duration-300 group-hover:bg-neutral-900/20" />
                     <div className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-full bg-white/95 px-3.5 py-2 text-xs font-semibold text-neutral-900 opacity-0 shadow-md backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
                       View All Photos
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5">
-                        <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5"><path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" /></svg>
                     </div>
                   </div>
                   <div className="p-7">
@@ -137,7 +130,6 @@ export default function KitchensBathsPage() {
           </div>
         </section>
 
-        {/* Process */}
         <section id="process" className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mb-12">
@@ -161,7 +153,6 @@ export default function KitchensBathsPage() {
           </div>
         </section>
 
-        {/* Credentials */}
         <section className="bg-stone-100 py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-stone-200 bg-white p-8">
@@ -174,7 +165,6 @@ export default function KitchensBathsPage() {
           </div>
         </section>
 
-        {/* Service Areas */}
         <section id="areas" className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
@@ -192,7 +182,6 @@ export default function KitchensBathsPage() {
           </div>
         </section>
 
-        {/* Contact */}
         <section id="contact" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="overflow-hidden rounded-[2.5rem] bg-neutral-900 text-stone-50 shadow-2xl">
             <div className="grid gap-8 p-8 lg:grid-cols-2 lg:p-14">
