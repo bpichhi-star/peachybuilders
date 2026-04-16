@@ -9,14 +9,14 @@ const GALLERIES = [
     title: "Kitchens",
     type: "Kitchen Remodels",
     summary: "Full kitchen transformations from layout and cabinetry to countertops, backsplash, and fixtures — built to impress and function beautifully.",
-    image: "/images/projects/kitchens-baths/kb-10.jpg",
+    image: "/images/projects/kitchens/kb-10.jpg",
   },
   {
     slug: "bathrooms",
     title: "Bathrooms",
     type: "Bathroom Remodels",
     summary: "Spa-inspired bathroom renovations featuring custom tile work, premium fixtures, vanities, and thoughtful layouts.",
-    image: "/images/projects/kitchens-baths/kb-9.jpg",
+    image: "/images/projects/bathrooms/WH_Bath.png",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function KitchensBathsPage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/projects/kitchens-baths/kb-9.jpg')" }} />
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/projects/kitchens/kb-9.jpg')" }} />
           <div className="absolute inset-0 bg-neutral-900/50" />
           <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8 lg:py-40">
             <div className="mb-5 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">Greater Los Angeles Area</div>
