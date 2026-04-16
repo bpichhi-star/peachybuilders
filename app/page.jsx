@@ -1,17 +1,67 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Welcome() {
   const [hovered, setHovered] = useState(null);
+  const [introPhase, setIntroPhase] = useState("overlay");
+
+  useEffect(() => {
+    const seen = sessionStorage.getItem("pb_intro_seen");
+    if (seen) { setIntroPhase("done"); return; }
+    const t1 = setTimeout(() => setIntroPhase("text"), 400);
+    const t2 = setTimeout(() => setIntroPhase("fadeout"), 3200);
+    const t3 = setTimeout(() => {
+      setIntroPhase("done");
+      sessionStorage.setItem("pb_intro_seen", "1");
+    }, 4800);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+  }, []);
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-white overflow-hidden">
+
+      {introPhase !== "done" && (
+        <div
+          className="absolute inset-0 z-50 flex items-center justify-center"
+          style={{
+            background: "#0a0a0a",
+            opacity: introPhase === "fadeout" ? 0 : 1,
+            transition: introPhase === "fadeout" ? "opacity 1.6s ease" : "none",
+            pointerEvents: introPhase === "fadeout" ? "none" : "auto",
+          }}
+        >
+          <div
+            className="text-center px-8"
+            style={{
+              opacity: introPhase === "text" ? 1 : 0,
+              transition: introPhase === "text"
+                ? "opacity 1.2s ease"
+                : introPhase === "fadeout"
+                ? "opacity 0.8s ease"
+                : "none",
+            }}
+          >
+            <p style={{ fontSize: "10px", letterSpacing: "0.45em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginBottom: "18px", fontWeight: 400 }}>
+              Welcome To
+            </p>
+            <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", letterSpacing: "0.22em", color: "#ffffff", fontWeight: 500, textTransform: "uppercase", marginBottom: "22px", lineHeight: 1.2 }}>
+              Peachy Builders
+            </h1>
+            <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)", fontStyle: "italic", letterSpacing: "0.08em", fontWeight: 300 }}>
+              How can we help you today?
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="absolute inset-x-0 top-0 z-20 flex flex-col items-center pt-10 pb-8 pointer-events-none select-none">
         <p className="text-[20px] uppercase tracking-[0.5em] text-neutral-400 mb-3">Welcome&nbsp;To</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-[0.15em] text-white uppercase leading-none">Peachy&nbsp;Builders</h1>
       </div>
+
       <div className="flex w-full min-h-screen flex-col md:flex-row">
+
         <Link href="/kitchens-baths" onMouseEnter={() => setHovered("kb")} onMouseLeave={() => setHovered(null)} className="group relative flex flex-1 flex-col items-center justify-start overflow-hidden cursor-pointer" style={{ minHeight: "50vh" }}>
           <div className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out scale-100 group-hover:scale-105" style={{ backgroundImage: "url('/images/projects/kitchens/kb-10.jpg')" }} />
           <div className="absolute inset-0 transition-all duration-500" style={{ background: hovered === "kb" ? "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.55))" : "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.72))" }} />
@@ -26,6 +76,7 @@ export default function Welcome() {
             </div>
           </div>
         </Link>
+
         <Link href="/outdoor" onMouseEnter={() => setHovered("outdoor")} onMouseLeave={() => setHovered(null)} className="group relative flex flex-1 flex-col items-center justify-start overflow-hidden cursor-pointer" style={{ minHeight: "50vh" }}>
           <div className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out scale-100 group-hover:scale-105" style={{ backgroundImage: "url('/images/projects/full-renovations/full_yard_day.png')" }} />
           <div className="absolute inset-0 transition-all duration-500" style={{ background: hovered === "outdoor" ? "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.55))" : "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.72))" }} />
@@ -39,10 +90,13 @@ export default function Welcome() {
             </div>
           </div>
         </Link>
+
       </div>
+
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-xs tracking-[0.25em] uppercase text-neutral-400 whitespace-nowrap">
         Agoura Hills, CA &nbsp;&middot;&nbsp; License #1058911
       </div>
+
     </div>
   );
 }
