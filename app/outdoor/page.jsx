@@ -9,14 +9,14 @@ const PROJECTS = [
     title: "Full Renovations",
     type: "Hardscape • Landscape • Lighting • Cabanas • Pool",
     summary: "A clean outdoor retreat with pavers, layered planting, and evening lighting built for entertaining.",
-    image: "/images/hero.jpg",
+    image: "/images/projects/full-renovations/full_yard_day.png",
   },
   {
     slug: "pools",
     title: "Pools",
     type: "Custom Pool Design & Construction",
     summary: "Resort-style and geometric custom pools designed and built from the ground up for homeowners across the greater Los Angeles area.",
-    image: "/images/projects/pools/pool-2.jpg",
+    image: "/images/projects/pools/kb-001.jpg",
   },
 ];
 
@@ -28,7 +28,7 @@ export default function OutdoorPage() {
     <div className="min-h-screen bg-stone-50 text-neutral-900">
       <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <button onClick={() => router.back()} className="text-left">
+          <button type="button" onClick={() => router.back()} className="text-left">
             <div className="text-xl font-semibold tracking-[0.18em] text-neutral-900">PEACHY BUILDERS</div>
             <div className="text-xs uppercase tracking-[0.28em] text-stone-500">Hardscape • Landscape • Pools</div>
           </button>
