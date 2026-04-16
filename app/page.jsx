@@ -4,62 +4,102 @@ import Link from "next/link";
 
 export default function Welcome() {
   const [hovered, setHovered] = useState(null);
-  const [introPhase, setIntroPhase] = useState("overlay");
+  const [phase, setPhase] = useState("overlay");
+  // phase: overlay | line1 | line2 | line3 | fadeout | done
 
   useEffect(() => {
     const seen = sessionStorage.getItem("pb_intro_seen");
-    if (seen) { setIntroPhase("done"); return; }
-    const t1 = setTimeout(() => setIntroPhase("text"), 400);
-    const t2 = setTimeout(() => setIntroPhase("fadeout"), 3200);
-    const t3 = setTimeout(() => {
-      setIntroPhase("done");
+    if (seen) { setPhase("done"); return; }
+
+    const t1 = setTimeout(() => setPhase("line1"), 300);
+    const t2 = setTimeout(() => setPhase("line2"), 1200);
+    const t3 = setTimeout(() => setPhase("line3"), 2200);
+    const t4 = setTimeout(() => setPhase("fadeout"), 3600);
+    const t5 = setTimeout(() => {
+      setPhase("done");
       sessionStorage.setItem("pb_intro_seen", "1");
-    }, 4800);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+    }, 5400);
+
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
   }, []);
+
+  const show = (line) => {
+    if (phase === "fadeout") return false;
+    if (line === 1) return ["line1","line2","line3"].includes(phase);
+    if (line === 2) return ["line2","line3"].includes(phase);
+    if (line === 3) return phase === "line3";
+    return false;
+  };
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-white overflow-hidden">
 
-      {introPhase !== "done" && (
+      {/* ── Intro overlay ─────────────────────────────────────── */}
+      {phase !== "done" && (
         <div
           className="absolute inset-0 z-50 flex items-center justify-center"
           style={{
             background: "#0a0a0a",
-            opacity: introPhase === "fadeout" ? 0 : 1,
-            transition: introPhase === "fadeout" ? "opacity 1.6s ease" : "none",
-            pointerEvents: introPhase === "fadeout" ? "none" : "auto",
+            opacity: phase === "fadeout" ? 0 : 1,
+            transition: phase === "fadeout" ? "opacity 1.8s ease" : "none",
+            pointerEvents: phase === "fadeout" ? "none" : "auto",
           }}
         >
-          <div
-            className="text-center px-8"
-            style={{
-              opacity: introPhase === "text" ? 1 : 0,
-              transition: introPhase === "text"
-                ? "opacity 1.2s ease"
-                : introPhase === "fadeout"
-                ? "opacity 0.8s ease"
-                : "none",
-            }}
-          >
-            <p style={{ fontSize: "10px", letterSpacing: "0.45em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", marginBottom: "18px", fontWeight: 400 }}>
+          <div className="text-center px-8 select-none">
+
+            <p style={{
+              fontSize: "clamp(13px, 1.8vw, 18px)",
+              letterSpacing: "0.45em",
+              color: "rgba(255,255,255,0.55)",
+              textTransform: "uppercase",
+              fontWeight: 300,
+              marginBottom: "24px",
+              opacity: show(1) ? 1 : 0,
+              transform: show(1) ? "translateY(0)" : "translateY(10px)",
+              transition: "opacity 1s ease, transform 1s ease",
+            }}>
               Welcome To
             </p>
-            <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", letterSpacing: "0.22em", color: "#ffffff", fontWeight: 500, textTransform: "uppercase", marginBottom: "22px", lineHeight: 1.2 }}>
+
+            <h1 style={{
+              fontSize: "clamp(36px, 6vw, 72px)",
+              letterSpacing: "0.18em",
+              color: "#ffffff",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              marginBottom: "28px",
+              lineHeight: 1.1,
+              opacity: show(2) ? 1 : 0,
+              transform: show(2) ? "translateY(0)" : "translateY(10px)",
+              transition: "opacity 1s ease, transform 1s ease",
+            }}>
               Peachy Builders
             </h1>
-            <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)", fontStyle: "italic", letterSpacing: "0.08em", fontWeight: 300 }}>
+
+            <p style={{
+              fontSize: "clamp(14px, 1.6vw, 20px)",
+              color: "rgba(255,255,255,0.5)",
+              fontStyle: "italic",
+              letterSpacing: "0.1em",
+              fontWeight: 300,
+              opacity: show(3) ? 1 : 0,
+              transform: show(3) ? "translateY(0)" : "translateY(10px)",
+              transition: "opacity 1s ease, transform 1s ease",
+            }}>
               How can we help you today?
             </p>
+
           </div>
         </div>
       )}
 
+      {/* ── Wordmark overlay ─────────────────────────────────── */}
       <div className="absolute inset-x-0 top-0 z-20 flex flex-col items-center pt-10 pb-8 pointer-events-none select-none">
         <p className="text-[20px] uppercase tracking-[0.5em] text-neutral-400 mb-3">Welcome&nbsp;To</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-[0.15em] text-white uppercase leading-none">Peachy&nbsp;Builders</h1>
       </div>
 
+      {/* ── Split Cards ───────────────────────────────────────── */}
       <div className="flex w-full min-h-screen flex-col md:flex-row">
 
         <Link href="/kitchens-baths" onMouseEnter={() => setHovered("kb")} onMouseLeave={() => setHovered(null)} className="group relative flex flex-1 flex-col items-center justify-start overflow-hidden cursor-pointer" style={{ minHeight: "50vh" }}>
