@@ -31,7 +31,7 @@ export default function Welcome() {
         >
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out scale-100 group-hover:scale-105"
-            style={{ backgroundImage: "url('/images/projects/kitchens-baths/kb-10.jpg')" }}
+            style={{ backgroundImage: "url('/images/projects/kitchens/kb-10.jpg')" }}
           />
           <div
             className="absolute inset-0 transition-all duration-500"
