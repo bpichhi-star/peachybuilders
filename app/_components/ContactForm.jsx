@@ -3,12 +3,16 @@ import { useState } from "react";
 
 /**
  * Wired contact form. Submits to Web3Forms; submissions arrive at Peachybuilders@gmail.com.
- * Required env var: NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
  *
  * Required fields: name, email, phone. Message is optional.
  *
+ * Note: the Web3Forms access key is public-by-design — it identifies the
+ * destination inbox, not authenticates it. Web3Forms enforces by domain.
+ *
  * @param {{source?: string}} props - source identifier (e.g. "kitchens-baths" or "outdoor")
  */
+const WEB3FORMS_ACCESS_KEY = "09d0c4ef-5e73-4f8b-aa64-e8189d7789f3";
+
 export default function ContactForm({ source = "site" }) {
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
   const [errorMsg, setErrorMsg] = useState("");
@@ -20,7 +24,7 @@ export default function ContactForm({ source = "site" }) {
 
     const fd = new FormData(e.target);
     const payload = {
-      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+      access_key: WEB3FORMS_ACCESS_KEY,
       subject: `New estimate request from ${fd.get("name") || "website visitor"} — ${source}`,
       from_name: "Peachy Builders Website",
       replyto: fd.get("email"),
