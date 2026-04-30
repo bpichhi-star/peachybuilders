@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import ContactForm from "../_components/ContactForm";
 
 const GALLERIES = [
   {
@@ -196,17 +197,7 @@ export default function KitchensBathsPage() {
                   <div>🕐 Mon–Fri, 9am – 5pm</div>
                 </div>
               </div>
-              <div className="rounded-[2rem] bg-white p-7 text-neutral-900">
-                <h3 className="text-xl font-semibold">Request a Free Estimate</h3>
-                <p className="mt-2 text-sm text-neutral-500">Tell us about your project and we&apos;ll be in touch shortly.</p>
-                <div className="mt-6 space-y-4">
-                  <input className="w-full rounded-2xl border border-stone-200 px-4 py-3 text-sm outline-none transition focus:border-neutral-800" placeholder="Full name" autoComplete="name" name="name" />
-                  <input className="w-full rounded-2xl border border-stone-200 px-4 py-3 text-sm outline-none transition focus:border-neutral-800" placeholder="Email address" type="email" name="email" />
-                  <input className="w-full rounded-2xl border border-stone-200 px-4 py-3 text-sm outline-none transition focus:border-neutral-800" placeholder="Phone number" type="tel" name="phone" />
-                  <textarea className="h-28 w-full rounded-2xl border border-stone-200 px-4 py-3 text-sm outline-none transition focus:border-neutral-800" placeholder="Tell us about your project" name="message" />
-                  <button type="button" className="w-full rounded-full bg-neutral-900 py-3 text-sm font-medium text-stone-50 transition hover:opacity-90">Submit Request</button>
-                </div>
-              </div>
+              <ContactForm source="kitchens-baths" />
             </div>
           </div>
         </section>
